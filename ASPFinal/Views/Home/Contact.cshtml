@@ -1,17 +1,22 @@
-﻿@{
+﻿@model ASPFinal.Models.Contact
+
+@{
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    Henry Bookstore<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div>
+    @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+    {
+        <label for="fName">First Name</label>
+        @Html.TextBoxFor(t => t.FirstName)
+        <label for="lName">Last Name</label>
+        @Html.TextBoxFor(t => t.LastName)
+        <label for="email">Email</label>
+        @Html.TextBoxFor(t => t.Email)
+        <label for="message">Message</label>
+        @Html.TextAreaFor(t => t.Message)
+        <input type="submit" value="Send Message" />
+    }
+</div>
