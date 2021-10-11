@@ -246,6 +246,7 @@
     <Content Include="Content\Images\9882\Thumbs.db" />
     <Content Include="Content\Images\9883\Thumbs.db" />
     <Content Include="Content\Images\9931\Thumbs.db" />
+    <Content Include="Content\Project 8 Final.pdf" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
