@@ -54,8 +54,8 @@ namespace ASPFinal.Controllers
                 model.AUTHOR_LAST = auth.AUTHOR_LAST;
                 model.WROTEs = dbo.WROTEs.Where(c => c.AUTHOR_NUM == auth.AUTHOR_NUM).ToList();
                 var filterBy = from f in dbo.AUTHORs
-                               where f.AUTHOR_NUM == auth.AUTHOR_NUM
-                               where f.AUTHOR_NUM.Equals(id)
+                               where f.AUTHOR_NUM == id
+                               //where f.AUTHOR_NUM.Equals(id)
                                orderby f.AUTHOR_FIRST
                                select f;
 
@@ -151,11 +151,13 @@ namespace ASPFinal.Controllers
             {
                 return HttpNotFound();
             }
-
+            //var auth = dbo.AUTHORs.Find(dbo.BOOKs.Find(id));
             ViewBag.Name = book.TITLE.ToUpper();
             ViewBag.Price = String.Format("{0:C}", book.PRICE);
             ViewBag.Author = book.WROTEs.First().AUTHOR.AUTHOR_LAST;
             ViewBag.Publisher = book.PUBLISHER.PUBLISHER_NAME;
+            ViewBag.PubId = book.PUBLISHER.PUBLISHER_CODE;
+            //ViewBag.AuthId = auth.AUTHOR_NUM;
 
             return View(book);
         }

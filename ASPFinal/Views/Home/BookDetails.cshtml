@@ -8,6 +8,6 @@
     <h2>Details For: @ViewBag.Name</h2>
     <img src="~/Content/images/@Html.DisplayFor(b => b.BOOK_CODE)/large.jpg" />
     <h3><b>Price:</b> @ViewBag.Price</h3>
-    <h3>Author: @ViewBag.Author</h3>
-    <h3>Publisher: @ViewBag.Publisher</h3>
+    <h3><a href="@Url.Action("BrowseByAuthor", "Home", new { id = ViewBag.AuthId })">Author: @ViewBag.Author</h3>
+    <h3><a href="@Url.Action("BrowseByPublisher", "Home", new { id = ViewBag.PubId })">Publisher: @ViewBag.Publisher</a></h3>
 </div>
