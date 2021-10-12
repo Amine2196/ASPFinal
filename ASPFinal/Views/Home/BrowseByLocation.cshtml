@@ -1,8 +1,30 @@
-﻿
+﻿@using ASPFinal.Models.EntityFramework
+
 @{
     ViewBag.Title = "BrowseByLocation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Browse By Location</h2>
+@model IEnumerable<BRANCH>
 
+<div class="jumbotron">
+    <h1>Browse By Location</h1>
+</div>
+    @foreach (var bra in Model.OrderBy(c => c.BRANCH_NAME))
+    {
+        <h2><a href="@Url.Action("BrowseByLocation", "Home", new { id = bra.BRANCH_NUM })">@bra.BRANCH_NAME</a></h2>
+        <div class="row">
+        @foreach (var book in bra.INVENTORies)
+        {
+        <div class="col-lg-3 col-lg-3">
+            <a href="@Url.Action("BookDetails", "Home", new { id = book.BOOK_CODE })"><img src="~/Content/images/@book.BOOK_CODE/thumb.jpg" class="thumbnail" /></a>
+            <div class="panel-body">
+                <h2 class="panel-title"><a href="@Url.Action("BrowseByInventory", "Home", new { id = book.BOOK_CODE })">@book.BOOK.TITLE.ToUpper()</a></h2>
+                <p>
+                    @bra.BRANCH_LOCATION
+                </p>
+            </div>
+        </div>
+        }
+      </div>
+    }

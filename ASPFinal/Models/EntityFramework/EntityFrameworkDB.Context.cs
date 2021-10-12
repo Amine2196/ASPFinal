@@ -30,7 +30,6 @@ namespace ASPFinal.Models.EntityFramework
         public virtual DbSet<BRANCH> BRANCHes { get; set; }
         public virtual DbSet<INVENTORY> INVENTORies { get; set; }
         public virtual DbSet<PUBLISHER> PUBLISHERs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<WROTE> WROTEs { get; set; }
     }
 }

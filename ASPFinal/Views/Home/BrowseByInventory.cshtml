@@ -1,0 +1,31 @@
+﻿@using ASPFinal.Models.EntityFramework
+
+
+@{
+    ViewBag.Title = "BrowseByInventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<INVENTORY>
+
+
+<div class="jumbotron">
+    <h1>Browse By Inventory</h1>
+</div>
+<div class="row">
+    @foreach (var auth in Model.OrderBy(c => c.ON_HAND))
+    {
+        <h2><a href="@Url.Action("BrowseByInventory", "Home", new { id = auth.ON_HAND })"></a></h2>
+
+        <div class="col-lg-3 col-lg-3">
+            <a href="@Url.Action("BookDetails", "Home", new { id = auth.BOOK_CODE })"><img src="@Url.Content("~/Content/images/" + auth.BOOK_CODE + "/thumb.jpg")" class="thumbnail" /></a>
+            <div class="panel-body">
+                <h2 class="panel-title"></h2>
+                <p>
+                    @*@auth.BOOK.PUBLISHER.PUBLISHER_NAME*@
+                </p>
+            </div>
+        </div>
+
+    }
+</div>

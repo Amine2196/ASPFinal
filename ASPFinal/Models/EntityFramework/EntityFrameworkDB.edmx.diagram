@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="HENRY_ASPNETModel.BRANCH" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HENRY_ASPNETModel.INVENTORY" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HENRY_ASPNETModel.PUBLISHER" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HENRY_ASPNETModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HENRY_ASPNETModel.WROTE" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="HENRY_ASPNETModel.FK__WROTE__AUTHOR_NU__1920BF5C" ManuallyRouted="false" />
         <AssociationConnector Association="HENRY_ASPNETModel.FK__BOOK__PUBLISHER___164452B1" ManuallyRouted="false" />

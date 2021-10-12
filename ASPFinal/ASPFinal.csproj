@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,9 +163,6 @@
       <DependentUpon>EntityFrameworkDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\PUBLISHER.cs">
-      <DependentUpon>EntityFrameworkDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\sysdiagram.cs">
       <DependentUpon>EntityFrameworkDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\WROTE.cs">
@@ -248,9 +246,11 @@
     <Content Include="Content\Images\9931\large.jpg" />
     <Content Include="Content\Images\9931\thumb.jpg" />
     <Content Include="Content\Images\author.jpg" />
+    <Content Include="Content\Images\bgimage.jpg" />
     <Content Include="Content\Images\books.jpg" />
     <Content Include="Content\Images\bookstore.jpg" />
     <Content Include="Content\Images\inventory.jpg" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\publisher.jpg" />
     <Content Include="Content\Images\wood.jpg" />
     <Content Include="favicon.ico" />
@@ -341,9 +341,11 @@
     <Content Include="Views\Home\BrowseByLocation.cshtml" />
     <Content Include="Views\Home\BrowseByPublisher.cshtml" />
     <Content Include="Views\Home\BookDetails.cshtml" />
+    <Content Include="Views\Home\BrowseByInventory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

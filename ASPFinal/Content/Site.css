@@ -1,12 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: linear-gradient(saddlebrown, sandybrown);
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: sandybrown;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -20,5 +22,66 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 500px;
+    padding: 5px;
+    display: block;
+    margin: 5px;
+}
+
+textarea {
+    width: 500px;
+    height: 250px;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav li:hover {
+    background-color: saddlebrown;
+}
+
+.navbar {
+    border: 0;
+    background-image: url("Images/wood.jpg");
+}
+
+.navbar-brand {
+    
+}
+
+[class*="col-"] {
+    padding: 2px;
+    max-height: 45vh;
+    height: 40vh;
+    width: 13vw;
+}
+
+    [class*="col-"]:hover {
+        background-color: rosybrown;
+    }
+
+    [class*="col-"] img {
+        width: 11vw;
+        height: 30vh;
+        margin: 0 auto;
+    }
+
+.jumbotron {
+    background-image: url("Images/bgimage.jpg");
+    color: white;
+    text-shadow: 2px 2px sandybrown;
+    backdrop-filter: blur(5px);
+}
+
+.row {
+    margin: 0 auto;
+}
+
+#loading {
+    display: none;
+}
+
+#details {
+    margin: 0 auto;
 }
