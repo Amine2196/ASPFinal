@@ -1,0 +1,13 @@
+﻿@model ASPFinal.Models.EntityFramework.BOOK
+
+<div class="jumbotron">
+    <h1>Book Details</h1>
+</div>
+
+<div id="details" class="row">
+    <h2>Details For: @ViewBag.Name</h2>
+    <img src="~/Content/images/@Html.DisplayFor(b => b.BOOK_CODE)/large.jpg" />
+    <h3><b>Price:</b> @ViewBag.Price</h3>
+    <h3>Author: @ViewBag.Author</h3>
+    <h3>Publisher: @ViewBag.Publisher</h3>
+</div>

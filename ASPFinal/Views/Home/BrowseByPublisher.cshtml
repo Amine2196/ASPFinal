@@ -1,0 +1,26 @@
+﻿@using ASPFinal.Models.EntityFramework
+
+@model IEnumerable<PUBLISHER>
+
+<div class="jumbotron">
+    <h1>Browse By Publisher</h1>
+</div>
+@foreach (var pub in Model.OrderBy(c => c.PUBLISHER_NAME))
+{
+    <h2><a href="@Url.Action("BrowseByPublisher", "Home", new { id = pub.PUBLISHER_CODE })"> @if (pub.BOOKs.Count > 0) { @pub.PUBLISHER_NAME }</h2>
+    <div class="row">
+        @foreach (var book in pub.BOOKs)
+        {
+            <div class="col-lg-3 col-lg-3">
+                <a href="@Url.Action("BookDetails", "Home", new { id = book.BOOK_CODE })"><img src="~/Content/images/@book.BOOK_CODE/thumb.jpg" class="thumbnail" /></a>
+                <div class="panel-body">
+                    <h2 class="panel-title">@pub.PUBLISHER_NAME.ToUpper()</h2>
+                    <p>
+                        @book.PUBLISHER.CITY
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+}
+

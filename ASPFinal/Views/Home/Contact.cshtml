@@ -1,17 +1,53 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model ASPFinal.Models.Contact
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/jquery");
+
+    <script>
+        function ContSuccess(userData) {
+            var target = $("#ContactForm");
+            target.empty();
+
+                if (userData) {
+                    target.append("<h3>Your message has been sent! </h3>");
+                }
+                else {
+                    target.append("<h3>Error sending your message! </h3>");
+                }
+        }
+    </script>
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<h2>Contact Management</h2>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div id="ContactForm">
+    @using (Ajax.BeginForm("Index", "Contact", new AjaxOptions
+    {
+        HttpMethod = "Post",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "loading",
+        LoadingElementDuration = 5000,
+        OnSuccess = "ContSuccess"
+    }))
+    {
+        <label for="fName">First Name</label>
+        @Html.TextBoxFor(t => t.FirstName)
+        <label for="lName">Last Name</label>
+        @Html.TextBoxFor(t => t.LastName)
+        <label for="email">Email</label>
+        @Html.TextBoxFor(t => t.Email)
+        <label for="emailco">Confirm Email</label>
+        @Html.TextBoxFor(t => t.EmailConfirm)
+        @*<label for="branch">Branch</label>
+        @Html.DropDownListFor(d => d.Branch, Model.AllBranches, "Select Branch")*@
+        <label for="message">Message</label>
+        @Html.TextAreaFor(t => t.Message)
+        <input type="submit" value="Send Message" />
+        @Html.ValidationSummary(true)
+    }
+</div>
+<div id="loading">
+    <p>Sending Message Please Wait..</p>
+    <img src="~/Content/Images/loading.gif" />
+</div>

@@ -1,0 +1,32 @@
+﻿@using ASPFinal.Models.EntityFramework
+
+
+@{
+    ViewBag.Title = "BrowseByAuthor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<AUTHOR>
+
+
+<div class="jumbotron">
+    <h1>Browse By Author</h1>
+</div>
+    @foreach (var auth in Model.OrderBy(c => c.AUTHOR_FIRST))
+    {
+        <h2><a href="@Url.Action("BrowseByAuthor", "Home", new { id = auth.AUTHOR_NUM })"> @if (auth.WROTEs.Count > 0) {@auth.AUTHOR_FIRST @auth.AUTHOR_LAST;} </a></h2>
+        <div class="row">
+            @foreach (var book in auth.WROTEs)
+            {
+            <div class="col-lg-3 col-lg-3">
+                <a href="@Url.Action("BookDetails", "Home", new { id = book.BOOK_CODE })"><img src="@Url.Content("~/Content/images/" + @book.BOOK_CODE + "/thumb.jpg")" class="thumbnail" /></a>
+                <div class="panel-body">
+                    <h2 class="panel-title">@book.BOOK.TITLE.ToUpper()</h2>
+                    <p>
+                        @book.BOOK.PUBLISHER.PUBLISHER_NAME
+                    </p>
+                </div>
+            </div>
+            }
+      </div>
+}
